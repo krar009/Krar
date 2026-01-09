@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int consumption;
+    int pricePerUnit;
+    long long totalBill;
+
+    // Input electricity consumption
+    cout << "Enter electricity consumption (in KW): ";
+    cin >> consumption;
+
+    // Determine price per unit
+    if (consumption <= 100) {
+        pricePerUnit = 250;
+    } 
+    else if (consumption <= 300) {
+        pricePerUnit = 300;
+    } 
+    else {
+        pricePerUnit = 350;
+    }
+
+    // Calculate total bill
+    totalBill = consumption * pricePerUnit;
+
+    // Display bill summary
+    cout << "\n--- Bill Summary ---" << endl;
+    cout << "Consumption: " << consumption << " units" << endl;
+    cout << "Price per unit: " << pricePerUnit << " IQD" << endl;
+    cout << "Total Bill: " << totalBill << " IQD" << endl;
+
+    // Evaluation
+    cout << "Evaluation: ";
+    if (totalBill > 100000) {
+        cout << "High consumption - Please reduce usage" << endl;
+    } else {
+        cout << "Normal consumption" << endl;
+    }
+
+    return 0;
+}
